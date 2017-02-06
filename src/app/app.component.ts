@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(private service: EmployeeService) {
     this.myForm = new FormGroup({
       'search': new FormControl('', [Validators.required]),
-      'toDate': new FormControl('', [Validators.required])
+      'toDate': new FormControl('')
     });
   }
   val1;
