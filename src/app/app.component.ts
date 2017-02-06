@@ -11,9 +11,7 @@ export class AppComponent {
   type: String = 'text';
   Flag = false;
   searchby: String[] = ["Employee_Number", "Employee_Name", "Designation", "Dates", "Band"];
-
   filterOperator: String[] = [];
-
   searchArray = [];
   searchArray1 = [];
   myForm: FormGroup;
@@ -29,7 +27,6 @@ export class AppComponent {
     this.type = 'text';
     this.val1 = val;
     this.Flag = false;
-
     if (val == 'Employee_Number') {
       this.filterOperator = ["<", ">", "<=", ">=", "=", "<>"];
     }
@@ -51,7 +48,6 @@ export class AppComponent {
     }
   }
   onChange2(val) {
-
     if (val == 'BETWEEN') {
       this.Flag = true;
     }
@@ -59,14 +55,11 @@ export class AppComponent {
       this.Flag = false;
     }
     this.val2 = val;
-
   }
   viewAll() {
     this.searchArray = this.service.getEmployee();
-
   }
   onClick() {
-
     this.searchArray = [];
     this.searchArray1 = this.service.getEmployee();
     let str = this.myForm.value;
@@ -199,19 +192,14 @@ export class AppComponent {
             }
           } break;
         case 'BETWEEN':
-          console.log(str.toDate);
-          console.log(str.search);
-          for (let i of this.searchArray1) {
-
+            for (let i of this.searchArray1) {
             if ((i.Dates > str.search) && (i.Dates < str.toDate)) {
               console.log("hai");
               this.searchArray.push(i);
             }
           } break;
-
       }
       console.log(this.searchArray);
     }
   }
-
 }

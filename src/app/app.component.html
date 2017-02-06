@@ -4,11 +4,13 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="page-header">
+        <!--Header Section-->
         <h1>Search Employee </h1>
       </div>
       <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-8">
+          <!--First Drop Down-->
           <form [formGroup]="myForm" (ngSubmit)="onClick()">
             <div class="form-group">
               <label for="formGroupExampleInput">Search By</label>
@@ -18,22 +20,23 @@
           </select>
             </div>
             <div class="form-group">
+              <!--Second Drop Down-->
               <label for="formGroupExampleInput2">Filter Operator</label>
               <select class="custom-select" (change)="onChange2($event.target.value)">
             <option >select</option>
            <option *ngFor="let j of filterOperator" [value]=j>{{j}}</option>
           </select>
-             
+
             </div>
             <div class="form-group">
               <label for="formGroupExampleInput">Search For</label>
               <input type="{{type}}" class="form-control" formControlName="search" id="formGroupExampleInput2" placeholder=" Search Here"
                 required>
             </div>
-             <div class="form-group" *ngIf="Flag">
-                <label for="query">To Date :</label>
-                <input type="date" class="form-control" formControlName="toDate" id="toDate" required>
-              </div>
+            <div class="form-group" *ngIf="Flag">
+              <label for="query">To Date :</label>
+              <input type="date" class="form-control" formControlName="toDate" id="toDate" required>
+            </div>
             <div>
               <button type="reset" (click)="viewAll()" class="btn btn-danger">Reset</button>
               <button type="submit" [disabled]="!myForm.valid" class="btn btn-info">Filter</button>
@@ -45,6 +48,7 @@
     </div>
   </div>
   <div class="row">
+    <!--Using Result Component with Input-->
     <app-sresult [searchArray1]="searchArray"></app-sresult>
   </div>
 </div>

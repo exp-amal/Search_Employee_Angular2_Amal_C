@@ -7,22 +7,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./sresult.component.css']
 })
 export class SresultComponent implements OnInit {
-
   @Input() searchArray1 = [];
   constructor(private service: EmployeeService) {
-
     this.searchArray1 = this.service.getArray();
     console.log(this.searchArray1);
   }
-
   ngOnInit() {
-
-    // this.searchArray = this.service.getArray();
-    // console.log(this.searchArray);
-
-
-
   }
-
-
 }

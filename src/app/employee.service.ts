@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-
 @Injectable()
 export class EmployeeService {
-  
   searchlist = [];
   Employees = [
     { Employee_Number: 1, Employee_Name: 'Superman', Designation: 'HR', Dates: '2016-12-12', Band: 'A' },
@@ -14,16 +12,10 @@ export class EmployeeService {
    getEmployee() {
     return this.Employees;
   }
-
   passArray(searchArray) {
-
     this.searchlist = searchArray;
-  
   }
   getArray() {
-    
     return this.searchlist;
   }
-
-
 }
